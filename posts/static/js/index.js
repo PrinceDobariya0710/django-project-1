@@ -1,0 +1,1 @@
+alert("This is your js for django project")

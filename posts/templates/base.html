@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="{% static 'js/index.js' %}"></script>
+    <title>django Project 1</title>
+</head>
+<body>
+    <header class="nav-link">
+        <a class="nav-link" href="{% url 'post_home' %}">Home</a>
+        <a class="nav-link" href="{% url 'post_about' %}">About</a>
+        <a class="nav-link" href="{% url 'post_service' %}">Service</a>
+        <a class="nav-link" href="{% url 'create_post' %}">Create Post</a>
+    </header>
+    
+    {% block content %}
+        
+    {% endblock content %}
+
+    <footer>
+        &copy; Django Project1 2025
+    </footer>
+</body>
+</html>
