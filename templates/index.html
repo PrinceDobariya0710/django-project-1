@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <h1>List of Posts</h1>
+    
+    {% for post in posts %}
+        <div class="post">
+            <a href="{% url 'post_detail' post_id=post.id %}" class="link">{{post.id}} {{post.title}}</a>
+            <p>{{post.content}}</p>
+        </div>
+    {% endfor %}
+    <div class="pagination">
+        
+        
+        
+        {% if posts.has_previous %}
+            <a href="{% url 'post_home' %}?page={{posts.previous_page_number}}">Previous</a>
+        {% endif %}
+        <p>{{posts.number}} of {{posts.paginator.num_pages}}</p>
+
+        {% if posts.has_next %}
+            <a href="{% url 'post_home' %}?page={{posts.next_page_number}}">Next</a>
+        {% endif %} 
+    </div>  
+{% endblock content %}
+    

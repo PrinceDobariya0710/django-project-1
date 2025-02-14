@@ -6,24 +6,70 @@
 }
 header{
     background-color: black;
-    padding: 20spx;
+    padding: 20px;
 }
 .nav-link{
     color: whitesmoke;
-    margin-left: 20px;
+    background-color: black;
+    margin-right: 10px;
+    text-decoration: none;
 }
 h1{
     margin: 20px;
 }
 a{
     text-decoration: nones;
+    font-size: 25px;
 }
-
+.post{
+    margin-left: 20px;
+}
 img{
     width: 200px;
 }
 
 form{
     margin-top: 100px;
-    margin: 20px;
+    margin: auto;
+    width: 50%;
+}
+.form-control {
+    width: 100%;
+    font-size: 20px;
+}
+.form-group{
+    margin-top: 10px;
+}
+.label{
+    margin-top: 20px;
+}
+.btn{
+    border: none;
+    background-color: black;
+    cursor: pointer;
+    color:white;
+    padding: 15px;
+}
+.link{
+    color: black;
+    text-decoration: none;
+}
+.error {
+    color: red;
+    font-size: small;
+}
+.alert{
+    padding: 20px;
+    background-color: lightgreen
+}
+.alert-error{
+    padding: 20px;
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+.pagination{
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
 }

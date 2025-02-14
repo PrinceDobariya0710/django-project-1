@@ -11,9 +11,20 @@
 <body>
     <header class="nav-link">
         <a class="nav-link" href="{% url 'post_home' %}">Home</a>
-        <a class="nav-link" href="{% url 'post_about' %}">About</a>
-        <a class="nav-link" href="{% url 'post_service' %}">Service</a>
-        <a class="nav-link" href="{% url 'create_post' %}">Create Post</a>
+        
+        
+        {% if request.user.is_authenticated %}
+            <a class="nav-link" href="{% url 'create_post' %}">Create Post</a>
+            <a class="nav-link" href="{% url 'log_out' %}">Log Out</a>
+        {% else %}
+            <a class="nav-link" href="{% url 'sign_up' %}">Sign Up</a>
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
+        {% endif %}
+            
+        
+
+        
+        
     </header>
     
     {% block content %}
