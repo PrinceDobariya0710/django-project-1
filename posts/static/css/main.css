@@ -7,6 +7,10 @@
 header{
     background-color: black;
     padding: 20px;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
 }
 .nav-link{
     color: whitesmoke;
@@ -71,5 +75,22 @@ form{
 .pagination{
     display: flex;
     justify-content: space-between;
-    width: 30%;
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+}
+.image{
+    width: 400px;
+    height: 200px;
+}
+.posts{
+    width: 60%;
+    margin: auto;
+    
+}
+.post-content{
+    margin-top: 20px;
+}
+.container{
+    margin-top: 100px;
 }

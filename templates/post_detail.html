@@ -2,10 +2,15 @@
 
 
 {% block content %}
-    <div class="post">
-        <h1  class="link">{{post.id}} {{post.title}}</h1>
-        <p>{{post.content}}</p>
-        <a href="{% url 'update_post' post_id=post.id %}">Update Post</a>
+    <div class="container">
+        <div class="post">
+            <h1  class="link">{{post.id}} {{post.title}}</h1>
+            <img src="{{post.thumbnail.url}}" alt="thumbnail does not exists" class="image">
+            <p>About : {{post.content}}</p>
+            <p>Auhtor : {{post.author}}</p>
+            <a href="{% url 'update_post' post_id=post.id %}">Update Post</a>
+        </div>
     </div>
+    
 {% endblock content %}
     

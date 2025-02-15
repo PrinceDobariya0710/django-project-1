@@ -2,39 +2,41 @@
 
 
 {% block content %}
-    
-    <form action="" method="post" enctype="multipart/form-data">
+    <div class="container">
+        <form action="" method="post" enctype="multipart/form-data">
         
-        {% if messages %}
-            
-            {% for message in messages %}
-                <p class="alert">{{message}}</p>
-            {% endfor %}
+            {% if messages %}
                 
-        {% endif %}
+                {% for message in messages %}
+                    <p class="alert">{{message}}</p>
+                {% endfor %}
+                    
+            {% endif %}
+                
+            {% csrf_token %}
+            <h1>Login</h1>
+    
             
-        {% csrf_token %}
-        <h1>Login</h1>
-
-        
-        {% if form.errors %}
-            <p class="alert-error">Invalid Username or Password  </p>
-        {% endif %}
-            
-        {% for field in form %}
+            {% if form.errors %}
+                <p class="alert-error">Invalid Username or Password  </p>
+            {% endif %}
+                
+            {% for field in form %}
+                <div class="form-group">
+                    <p class="label">{{field.label}}</p>
+                    {{field}}
+                </div>
+            {% endfor %}
             <div class="form-group">
-                <p class="label">{{field.label}}</p>
-                {{field}}
+                <input class="btn" type="submit" value="Submit">
+            </div> 
+            <div class="form-group">
+                <small>
+                    <p>Don't have an account? <a href="{% url 'sign_up' %}">Sign Up</a></p>
+                </small>
             </div>
-        {% endfor %}
-        <div class="form-group">
-            <input class="btn" type="submit" value="Submit">
-        </div> 
-        <div class="form-group">
-            <small>
-                <p>Don't have an account? <a href="{% url 'sign_up' %}">Sign Up</a></p>
-            </small>
-        </div>
-    </form>
+        </form>
+    </div>
+    
 {% endblock content %}
     
