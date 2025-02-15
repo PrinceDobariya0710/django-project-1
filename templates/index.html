@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+    
+    
+    {% if posts|length>0  %}
     <div class="posts">
         <h1>List of Posts</h1>
     
@@ -12,7 +15,12 @@
             </div>
         {% endfor %}
     </div>
-    
+    {% else %}
+    <div class="no-posts">
+        <h1 class="-no-post-head">No Posts</h1>
+    </div>
+    {% endif %}
+        
     <div class="pagination">
         
         

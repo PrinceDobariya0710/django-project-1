@@ -31,3 +31,13 @@ django-admin startproject blogproject .
 django-admin startapp posts
 python3 manage.py startapp users
 ```
+
+# Generate Secrets
+```bash
+python3
+```
+```python
+import secrets
+token = secrets.token_hex()
+print(token)
+```
